@@ -1,0 +1,3 @@
+-- This SQL Script creates an index on Table name and score
+
+CREATE INDEX idx_name_first_score ON names (name(1), score);
