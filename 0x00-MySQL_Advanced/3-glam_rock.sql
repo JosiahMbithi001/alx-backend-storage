@@ -1,6 +1,6 @@
--- This File orders All bands with F=Glam Rock as their main style ranked by longetivity
+-- This File orders All bands with Glam Rock as their main style ranked by longetivity
 
-SELECT band_name, (CASE WHEN split = 0 THEN (2022 - formed) ELSE (split - formed) END ) AS lifespan
-FROM metal_bands
-WHERE style = 'Glam rock'
-ORDER BY lifespan DESC;
+SELECT band_name, (IFNULL(split, 2022) - formed) AS lifespan
+    FROM metal_bands
+    WHERE style LIKE '%Glam rock%'
+    ORDER BY lifespan DESC;
