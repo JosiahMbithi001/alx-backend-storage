@@ -1,0 +1,2 @@
+// This Script adds a new attributr to the collection school
+db.school.updateMany({ name : "Holberton school"}, {$set: {address: "972 Mission street" } }, {multi : true})
